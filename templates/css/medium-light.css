@@ -1,0 +1,63 @@
+html, body {
+	font-family: Georgia,Cambria,"Times New Roman",Times,serif;
+    letter-spacing: 0;
+    font-weight: 400;
+    font-style: normal;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -moz-font-feature-settings: "liga" on;
+    color: rgba(0,0,0,.84);
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+a {
+	color: rgba(0,0,0,.84);
+}
+
+a:hover {
+	color: rgba(0,0,0,.70);
+}
+
+p {
+    --x-height-multiplier: 0.375;
+    --baseline-multiplier: 0.17;
+    letter-spacing: .01rem;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 21px;
+    line-height: 1.58;
+    letter-spacing: -.003em;
+}
+
+li {
+    --x-height-multiplier: 0.375;
+    --baseline-multiplier: 0.17;
+    letter-spacing: .01rem;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 21px;
+    line-height: 1.58;
+    letter-spacing: -.003em;
+}
+
+.content {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1em;
+    padding-right: 1em;
+    max-width: 768px;
+}
+
+.post-meta {
+	color: #aaa;
+}
+.post-tag {
+	    background: #aaa;
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 8px;
+    font-size: 14px;
+    margin: 5px 5px 5px 0px;
+}

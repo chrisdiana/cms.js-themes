@@ -1,0 +1,37 @@
+<h1 class="content-subhead">Recent Posts</h1>
+<div class="posts-list fade-in">
+  <% data.posts.forEach(function(post) { %>
+    <% if(!post.draft) { %>
+      <section class="post">
+        <header class="post-header">
+          <img width="48" height="48" alt="Placeholder" class="post-avatar" src="http://i.pravatar.cc/48">
+          <h2 class="post-title">
+          <a href="<%= post.permalink %>"><%= post.title %></a>
+          </h2>
+          <p class="post-meta">
+            <% if(post.date) { %>
+              <span><%= post.date %></span>
+            <% } %>
+            <% if(post.author) { %>
+              By <a href="#" class="post-author"><%= post.author %></a>
+            <% } %>
+            <% if(post.tags) { %>
+              <% post.tags.forEach(function(tag) { %>
+                <% if(tag) { %>
+                <a class="post-category" href="#/posts?tag=<%= tag %>">
+                  <%= tag %>
+                </a>
+                <% } %>
+              <% }) %>
+            <% } %>
+          </p>
+        </header>
+        <div class="post-description">
+          <% if(post.excerpt) { %>
+            <p><%= post.excerpt %></p>
+          <% } %>
+        </div>
+      </section>
+    <% } %>
+  <% }) %>
+</div>

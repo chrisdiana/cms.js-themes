@@ -1,0 +1,11 @@
+<div class="card article fade-in">
+  <div class="card-content">
+  	<h1 class="is-size-1">Pages</h1>
+		<hr>
+	 	<% data.pages.forEach(function(page) { %>
+	    <h3 class="is-size-3">
+	      <a href="<%= page.permalink %>"><%= page.title %></a>
+	    </h3>
+	  <% }) %>
+  </div>
+</div>

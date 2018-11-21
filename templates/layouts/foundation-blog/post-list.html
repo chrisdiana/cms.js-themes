@@ -1,0 +1,46 @@
+<div class="blog-posts-list fade-in">
+  <% data.posts.forEach(function(post) { %>
+    <% if(!post.draft) { %>
+      <div class="blog-post">
+        <a href="<%= post.permalink %>">
+          <h3 class="blog-post-title">
+            <%= post.title %>
+            <% if(post.date) { %>
+              <small><%= post.date %></small>
+            <% } %>
+          </h3>
+        </a>
+        <img class="thumbnail" src="https://placehold.it/850x350">
+        <% if(post.excerpt) { %>
+          <p><%= post.excerpt %></p>
+        <% } %>
+        <div class="callout">
+          <ul class="menu simple">
+            <li>
+              <a href="#">
+              <% if(post.author) { %>
+                Author: <%= post.author %>
+              <% } %>
+              </a>
+            </li>
+            <li><a href="#">Comments: 3</a></li>
+          </ul>
+        </div>
+      </div>
+    <% } %>
+  <% }) %>
+</div>
+
+<div class="row column">
+    <ul class="pagination" role="navigation" aria-label="Pagination">
+        <li class="disabled">Previous</li>
+        <li class="current"><span class="show-for-sr">You're on page</span> 1</li>
+        <li><a href="#" aria-label="Page 2">2</a></li>
+        <li><a href="#" aria-label="Page 3">3</a></li>
+        <li><a href="#" aria-label="Page 4">4</a></li>
+        <li class="ellipsis"></li>
+        <li><a href="#" aria-label="Page 12">12</a></li>
+        <li><a href="#" aria-label="Page 13">13</a></li>
+        <li><a href="#" aria-label="Next page">Next</a></li>
+    </ul>
+</div>

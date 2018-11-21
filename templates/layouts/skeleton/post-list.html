@@ -1,0 +1,21 @@
+<div class="posts-list fade-in">
+  <% data.posts.forEach(function(post) { %>
+    <% if(!post.draft) { %>
+      <article class="post">
+        <h3 class="post-title">
+          <a href="<%= post.permalink %>"><%= post.title %></a>
+        </h3>
+        <% if(post.date) { %>
+          <div class="post-date">
+            <span><%= post.date %></span>
+          </div>
+        <% } %>
+        <div class="post-content">
+          <% if(post.excerpt) { %>
+            <p><%= post.excerpt %></p>
+          <% } %>
+        </div>
+      </article>
+    <% } %>
+  <% }) %>
+</div>

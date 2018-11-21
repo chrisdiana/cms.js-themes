@@ -1,0 +1,22 @@
+<div class="post fade-in">
+  <h3 class="post-title">
+    <%= data.title %>
+  </h3>
+  <% if(data.date) { %>
+    <div class="post-date">
+      <span><%= data.date %></span>
+    </div>
+  <% } %>
+  <div class="post-tags">
+    <% if(data.tags) { %>
+      <% data.tags.forEach(function(tag) { %>
+        <% if(tag) { %>
+          <a href="#/posts?tag=<%= tag %>" class="post-tag"><%= tag %></a>
+        <% } %>
+      <% }) %>
+    <% } %>
+  </div>
+  <div class="post-content">
+    <%= data.body %>
+  </div>
+</div>

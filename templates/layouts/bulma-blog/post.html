@@ -1,0 +1,36 @@
+<div class="card article fade-in">
+  <div class="card-content">
+    <div class="media">
+      <div class="media-center">
+        <img src="http://i.pravatar.cc/300" class="author-image" alt="Placeholder image">
+      </div>
+      <div class="media-content has-text-centered">
+        <p class="title article-title">
+          <%= data.title %>
+        </p>
+        <p class="subtitle is-6 article-subtitle">
+          <% if(data.author) { %>
+            <a href="#"><%= data.author %></a> on 
+          <% } %>
+          <% if(data.date) { %>
+            <%= data.date %>
+          <% } %>
+        </p>
+      </div>
+      <div class="tags">
+        <% if(data.tags) { %>
+          <% data.tags.forEach(function(tag) { %>
+            <% if(tag) { %>
+              <a href="#/posts?tag=<%= tag %>">
+                <span class="tag is-rounded is-info"><%= tag %></span>
+              </a>
+            <% } %>
+          <% }) %>
+        <% } %>
+      </div>
+    </div>
+    <div class="content article-body">
+      <%= data.body %>
+    </div>
+  </div>
+</div>

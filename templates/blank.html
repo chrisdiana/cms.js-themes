@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMS.js</title>
+    <meta name="description" content="The JavaScript Site Generator">
+    <meta name="author" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <noscript>Please enable JavaScript to view this site.</noscript>
+  </head>
+  <body>
+    <div>
+      <header>
+        <h3>
+        <a href="#" title="Home">CMS.js</a>
+        <small>The Javascript Site Generator</small>
+        </h3>
+        <nav>
+          <ul>
+            <li><a href="#/posts">Posts</a></li>
+            <li><a href="//github.com/chrisdiana/cms.js" target="_blank">Github</a></li>
+            <li><a href="#/pages/about">About</a></li>
+            <li><a href="#/pages/links">Links</a></li>
+          </ul>
+        </nav>
+      </header>
+      
+      <!-- CMS.js -->
+      <div id="cms"></div>
+      
+      <footer>
+        <small>© 2018 All Rights Reserved.</small>
+      </footer>
+    </div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.12/es5-shim.min.js"></script>
+    <script src="../js/cms.js"></script>
+    <script>
+    var blog = new CMS({
+      elementId: 'cms',
+      mode: 'GITHUB',
+      github: {
+        username: 'chrisdiana',
+        repo: 'cms.js-themes',
+        branch: 'master',
+        host: 'https://api.github.com',
+        prefix: 'templates',
+      },
+      layoutDirectory: 'layouts/blank',
+      errorLayout: 'error',
+      defaultView: 'posts',
+      types: [
+        { name: 'posts', layout: { list: 'post-list', single: 'post' }},
+        { name: 'pages',layout: { list: 'page-list', single: 'page' }},
+      ],
+    });
+    </script>
+  </body>
+</html>

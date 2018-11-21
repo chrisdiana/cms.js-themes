@@ -1,0 +1,63 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foundation + CMS.js</title>
+    <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+    <link href="./css/animations.css" rel="stylesheet">
+    <noscript>Please enable JavaScript to view this site.</noscript>
+  </head>
+  <body>
+    <div class="top-bar">
+      <div class="top-bar-left">
+        <ul class="menu">
+          <li class="menu-text">Blog Simple</li>
+          <li><a href="#/posts">Posts</a></li>
+          <li><a href="#/pages/links">Links</a></li>
+          <li><a href="#/pages/about">About</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout large primary">
+      <div class="row column text-center">
+        <h1>Foundation + CMS.js</h1>
+        <h2 class="subheader">Such a Simple Blog Layout</h2>
+      </div>
+    </div>
+    <div class="row medium-8 large-7 columns">
+
+      <!-- CMS.js -->
+      <div id="cms"></div>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+
+    <!-- CMS.js -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.12/es5-shim.min.js"></script>
+    <script src="../js/cms.js"></script>
+    <script>
+      $(document).foundation();
+
+      var blog = new CMS({
+        elementId: 'cms',
+        mode: 'GITHUB',
+        github: {
+          username: 'chrisdiana',
+          repo: 'cms.js-themes',
+          branch: 'master',
+          host: 'https://api.github.com',
+          prefix: 'templates',
+        },
+        layoutDirectory: 'layouts/foundation-blog',
+        errorLayout: 'error',
+        defaultView: 'posts',
+        types: [
+          { name: 'posts', layout: { list: 'post-list', single: 'post' } },
+          { name: 'pages', layout: { list: 'page-list', single: 'page' } },
+        ],
+      });
+    </script>
+  </body>
+</html>

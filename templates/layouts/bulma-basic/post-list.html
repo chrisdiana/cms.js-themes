@@ -1,0 +1,23 @@
+<% data.posts.forEach(function(post) { %>
+  <% if(!post.draft) { %>
+    <div class="section fade-in">
+      <a href="<%= post.permalink %>">
+        <p class="title article-title">
+          <%= post.title %>
+        </p>
+      </a>
+      <p class="subtitle is-6 article-subtitle has-text-grey-light">
+        <% if(post.author) { %>
+          <a href="#"><%= post.author %></a> on 
+        <% } %>
+        <% if(post.date) { %>
+          <%= post.date %>
+        <% } %>
+      </p>
+      <% if(post.excerpt) { %>
+        <p><%= post.excerpt %></p>
+      <% } %>
+      </div>
+    </div>
+  <% } %>
+<% }) %>

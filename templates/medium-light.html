@@ -1,0 +1,51 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Medium Style Light - CMS.js</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="apple-touch-icon" href="icon.png">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="./css/medium-light.css">
+    <link href="./css/animations.css" rel="stylesheet">
+    <noscript>Please enable JavaScript to view this site.</noscript>
+  </head>
+  <body>
+    <!--[if lte IE 9]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+    <![endif]-->
+    <div class="content">
+
+      <!-- CMS.js -->
+      <div id="cms"></div>
+
+    </div>
+    
+    <!-- CMS.js -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.12/es5-shim.min.js"></script>
+    <script src="../js/cms.js"></script>
+    <script>
+    var blog = new CMS({
+      elementId: 'cms',
+      mode: 'GITHUB',
+      github: {
+        username: 'chrisdiana',
+        repo: 'cms.js-themes',
+        branch: 'master',
+        host: 'https://api.github.com',
+        prefix: 'templates',
+      },
+      layoutDirectory: 'layouts/medium',
+      errorLayout: 'error',
+      defaultView: 'posts',
+      types: [
+        { name: 'posts', layout: { list: 'post-list', single: 'post' }},
+        { name: 'pages', layout: { list: 'page-list', single: 'page' }},
+      ],
+    });
+    </script>
+  </body>
+</html>

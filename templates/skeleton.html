@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Skeleton CSS + CMS.js</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <noscript>Please enable JavaScript to view this site.</noscript>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="header" style="margin-top:20px;">
+          <div class="u-pull-left">
+            <h4>
+            Skeleton CSS + CMS.js
+            </h4>
+          </div>
+          <div class="u-pull-right">
+            <a class="button" href="#/posts">Posts</a>
+            <a class="button" href="#/pages/about">About</a>
+          </div>
+        </div>
+        
+        <div class="u-cf"></div>
+        <hr>
+
+        <!-- CMS.js -->
+        <div id="cms"></div>
+
+      </div>
+    </div>
+    
+    <!-- CMS.js -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.12/es5-shim.min.js"></script>
+    <script src="../js/cms.js"></script>
+    <script>
+    var blog = new CMS({
+      elementId: 'cms',
+      mode: 'GITHUB',
+      github: {
+        username: 'chrisdiana',
+        repo: 'cms.js-themes',
+        branch: 'master',
+        host: 'https://api.github.com',
+        prefix: 'templates',
+      },
+      layoutDirectory: 'layouts/skeleton',
+      errorLayout: 'error',
+      defaultView: 'posts',
+      types: [
+        { name: 'posts', layout: { list: 'post-list', single: 'post' }},
+        { name: 'pages', layout: { list: 'page-list', single: 'page' }},
+      ],
+    });
+    </script>
+  </body>
+</html>

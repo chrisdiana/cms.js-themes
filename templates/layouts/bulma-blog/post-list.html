@@ -1,0 +1,33 @@
+<% data.posts.forEach(function(post) { %>
+  <% if(!post.draft) { %>
+    <div class="card article fade-in">
+      <div class="card-content">
+        <div class="media">
+          <div class="media-center">
+            <img src="http://i.pravatar.cc/300" class="author-image" alt="Placeholder image">
+          </div>
+          <div class="media-content has-text-centered">
+            <a href="<%= post.permalink %>">
+              <p class="title article-title">
+                <%= post.title %>
+              </p>
+            </a>
+            <div class="tags has-addons level-item">
+              <% if(post.author) { %>
+                <span class="tag is-rounded is-info"><%= post.author %></span>
+              <% } %>
+              <% if(post.date) { %>
+                <span class="tag is-rounded"><%= post.date %> </span>
+              <% } %>
+            </div> 
+          </div>
+        </div>
+        <div class="content article-body">
+          <% if(post.excerpt) { %>
+            <p><%= post.excerpt %></p>
+          <% } %>
+        </div>
+      </div>
+    </div>
+  <% } %>
+<% }) %>

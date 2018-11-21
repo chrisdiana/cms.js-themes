@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Free CMS.js Themes & Templates</title>
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/chrisdiana/cms.js/gh-pages/img/favicon.ico" type="image/x-icon">
+    <meta name="description" content="Free bulma templates">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,700" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <style>
+    </style>
+  </head>
+  <body>
+    <section class="hero" style="background:#00D0F8">
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <img class="is-horizontal-center" style="height: 25px;margin-bottom: 5px;" src="img/white-blocks.png"/>
+          <h1 class="title has-text-white-bis has-text-weight-light">
+            Free CMS.js Themes
+          </h1>
+          <h2 class="subtitle has-text-white-ter has-text-weight-light">
+            Themes & templates with popular CSS  <br> frameworks using 
+              <a style="color:#fff;" href="https://github.com/chrisdiana/cms.js">CMS.js</a>
+          </h2>
+          <a class="github-button" href="https://github.com/chrisdiana/cms.js-themes" data-size="large" aria-label="View chrisdiana/cms.js-themes on GitHub">View on Github</a>
+          <a class="github-button" href="https://github.com/chrisdiana/cms.js-themes" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star chrisdiana/cms.js-themes on GitHub">Star</a>
+          <a class="github-button" href="https://github.com/chrisdiana/cms.js-themes/fork" data-size="large" data-show-count="true" aria-label="Fork chrisdiana/cms.js-themes on GitHub">Fork</a>
+        </div>
+      </div>
+      </div>
+    </section>
+    <br />
+    <div id="main" class="container content-wrapper">
+      <div class="columns is-multiline">
+
+        <!-- Themes -->
+        <div v-for="theme in themes" class="column is-4">
+          <div class="card">
+            <header class="card-header">
+              <p class="card-header-title">
+                <span>{{ theme.name }}</span>
+              </p>
+            </header>
+            <div class="card-content">
+              <figure class="image">
+                <img v-bind:src="'./img/screenshots/' + theme.reference + '.png'">
+              </figure>
+            </div>
+            <footer class="card-footer">
+              <a target="_blank" v-bind:href="'./templates/' + theme.reference +'.html'" class="card-footer-item">Preview</a>
+              <a target="_blank" v-bind:href="'https://github.com/chrisdiana/cms.js-themes/blob/master/templates/' + theme.reference +'.html'" class="card-footer-item">Source Code</a>
+            </footer>
+          </div>
+        </div>
+
+        <!-- coming soon -->
+        <div class="column">
+          <center>
+            <div class="box">
+              <p class="has-text-centered">More themes coming soon!</p>
+            </div>
+          </center>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="content has-text-centered">
+          <p>
+            <strong>CMS.js Themes</strong> by <a href="https://github.com/chrisdiana">Chris Diana</a> and <a href="https://github.com/chrisdiana/cms.js-themes/graphs/contributors">many</a> contributors.
+            Source code is licensed
+            <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.<br>
+            This theme inspired by <a href="https://github.com/dansup/bulma-templates">Bulma Templates</a>. 
+            Thanks <a href="https://github.com/dansup">dansup</a>! 
+          </p>
+          <p>
+            <a class="icon" href="https://github.com/chrisdiana/cms.js-themes">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+            </a>
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+      new Vue({
+        el: '#main',
+        data: {
+          themes: [
+            { name: 'Blank', reference: 'blank' },
+            { name: 'Bootstrap Blog', reference: 'bootstrap-blog' },
+            { name: 'Bootstrap Starter', reference: 'bootstrap-starter' },
+            { name: 'Bulma Basic', reference: 'bulma-basic' },
+            { name: 'Bulma Blog', reference: 'bulma-blog' },
+            { name: 'Foundation Blog Simple', reference: 'foundation-blog-simple' },
+            { name: 'Foundation Blog Sidebar', reference: 'foundation-blog' },
+            { name: 'Medium Dark', reference: 'medium-dark' },
+            { name: 'Medium Light', reference: 'medium-light' },
+            { name: 'Poole', reference: 'poole' },
+            { name: 'Pure CSS Blog', reference: 'pure-blog' },
+            { name: 'Skeleton CSS', reference: 'skeleton' },
+          ],
+        }
+      });
+    </script>
+  </body>
+</html>

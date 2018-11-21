@@ -1,0 +1,28 @@
+<section class="post">
+  <header class="post-header">
+    <img width="48" height="48" alt="Placeholder" class="post-avatar" src="http://i.pravatar.cc/48">
+      <h2 class="post-title">
+        <a href="<%= data.permalink %>"><%= data.title %></a>
+      </h2>
+      <p class="post-meta">
+        <% if(data.date) { %>
+          <span><%= data.date %></span>
+        <% } %>
+        <% if(data.author) { %>
+          By <a href="#" class="post-author"><%= data.author %></a> 
+        <% } %>
+        <% if(data.tags) { %>
+          <% data.tags.forEach(function(tag) { %>
+            <% if(tag) { %>
+              <a class="post-category" href="#/posts?tag=<%= tag %>">
+                <%= tag %>
+              </a>
+            <% } %>
+          <% }) %>
+        <% } %>
+      </p>
+  </header>
+  <div class="post-description">
+    <p><%= data.body %></p>
+  </div>
+</section>

@@ -1,0 +1,26 @@
+<div class="section fade-in">
+  <p class="title article-title">
+    <%= data.title %>
+  </p>
+  <p class="subtitle is-6 article-subtitle has-text-grey-light">
+    <% if(data.author) { %>
+      <a href="#"><%= data.author %></a> on 
+    <% } %>
+    <% if(data.date) { %>
+      <%= data.date %>
+    <% } %>
+  </p>
+  <div class="tags">
+    <% if(data.tags) { %>
+      <% data.tags.forEach(function(tag) { %>
+        <% if(tag) { %>
+          <a href="#/posts?tag=<%= tag %>">
+            <span class="tag is-primary"><%= tag %></span>
+          </a>
+        <% } %>
+      <% }) %>
+    <% } %>
+  </div>
+  <%= data.body %>
+  </div>
+</div>

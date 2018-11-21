@@ -1,0 +1,35 @@
+<div class="blog-post">
+  <h3 class="blog-post-title">
+    <%= data.title %>
+    <% if(data.date) { %>
+      <small><%= data.date %></small>
+    <% } %>
+  </h3>
+  <img class="thumbnail" src="https://placehold.it/850x350">
+  <div class="blog-post-tags pb-4">
+    <% if(data.tags) { %>
+      <% data.tags.forEach(function(tag) { %>
+        <% if(tag) { %>
+          <a href="#/posts?tag=<%= tag %>">
+            <button type="button" class="btn btn-primary btn-sm">
+              <%= tag %>
+            </button>
+          </a>
+        <% } %>
+      <% }) %>
+    <% } %>
+  </div>
+  <%= data.body %>
+  <div class="callout">
+    <ul class="menu simple">
+      <li>
+        <a href="#">
+        <% if(data.author) { %>
+          Author: <%= data.author %>
+        <% } %>
+        </a>
+      </li>
+      <li><a href="#">Comments: 3</a></li>
+    </ul>
+  </div>
+</div>

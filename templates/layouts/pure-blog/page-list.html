@@ -1,0 +1,8 @@
+<h1 class="content-subhead">Pages</h1>
+<div class="pages-list fade-in">
+  <% data.pages.forEach(function(page) { %>
+    <h4>
+      <a href="<%= page.permalink %>"><%= page.title %></a>
+    </h4>
+  <% }) %>
+</div>

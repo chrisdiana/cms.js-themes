@@ -1,0 +1,15 @@
+<div>
+  <% data.posts.forEach(function(post) { %>
+    <% if(!post.draft) { %>
+      <div>
+        <h1><a href="<%= post.permalink %>"><%= post.title %></a></h1>
+        <% if(post.date) { %>
+          <span><%= post.date %> </span>
+        <% } %>
+        <% if(post.excerpt) { %>
+          <p><%= post.excerpt %></p>
+        <% } %>
+      </div>
+    <% } %>
+  <% }) %>
+</div>

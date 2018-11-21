@@ -1,0 +1,14 @@
+<div>
+  <h1><%= data.title %></h1>
+  <% if(data.date) { %>
+    <span><%= data.date %></span>
+  <% } %>
+  <% if(data.tags) { %>
+    <% data.tags.forEach(function(tag) { %>
+      <% if(tag) { %>
+        <a href="#/posts?tag=<%= tag %>" class="post-tag"><%= tag %></a>
+      <% } %>
+    <% }) %>
+  <% } %>
+  <%= data.body %>
+</div>

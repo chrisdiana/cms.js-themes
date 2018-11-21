@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A layout example that shows off a blog page with a list of posts.">
+    <title>Pure + CMS.js</title>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-old-ie-min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
+    <!--<![endif]-->
+    <link rel="stylesheet" href="./css/pure-blog.css">
+    <noscript>Please enable JavaScript to view this site.</noscript>
+  </head>
+  <body>
+    <div id="layout" class="pure-g">
+      <div class="sidebar pure-u-1 pure-u-md-1-4">
+        <div class="header">
+          <h1 class="brand-title">A Sample Blog</h1>
+          <h2 class="brand-tagline">Pure CSS + CMS.js</h2>
+          <nav class="nav">
+            <ul class="nav-list">
+              <li class="nav-item">
+                <a class="pure-button" href="http://purecss.io">Pure</a>
+              </li>
+              <li class="nav-item">
+                <a class="pure-button" href="https://github.com/chrisdiana/cms.js">CMS.js</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="content pure-u-1 pure-u-md-3-4">
+        <div>
+          <!-- A wrapper for all the blog posts -->
+          <div class="posts">
+            
+            <!-- CMS.js -->
+            <div id="cms"></div>
+            
+          </div>
+          <div class="footer">
+            <div class="pure-menu pure-menu-horizontal">
+              <ul>
+                <li class="pure-menu-item"><a href="#/pages/about" class="pure-menu-link">About</a></li>
+                <li class="pure-menu-item"><a href="#/pages/links" class="pure-menu-link">Links</a></li>
+                <li class="pure-menu-item"><a href="#/posts" class="pure-menu-link">Posts</a></li>
+                <li class="pure-menu-item"><a href="http://github.com/pure-css/pure/" class="pure-menu-link">Pure</a></li>
+                <li class="pure-menu-item"><a href="https://github.com/chrisdiana/cms.js" class="pure-menu-link">CMS.js</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- CMS.js -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.12/es5-shim.min.js"></script>
+    <script src="../js/cms.js"></script>
+    <script>
+    var blog = new CMS({
+      elementId: 'cms',
+      mode: 'GITHUB',
+      github: {
+        username: 'chrisdiana',
+        repo: 'cms.js-themes',
+        branch: 'master',
+        host: 'https://api.github.com',
+        prefix: 'templates',
+      },
+      layoutDirectory: 'layouts/pure-blog',
+      errorLayout: 'error',
+      defaultView: 'posts',
+      types: [
+        { name: 'posts', layout: { list: 'post-list', single: 'post' }},
+        { name: 'pages', layout: { list: 'page-list', single: 'page' }},
+      ],
+    });
+    </script>
+  </body>
+</html>
